@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/prettify.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+          <a class="brand" href="#"><%= title %></a>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span4">
+          <h4>Enter Jade code.</h4><h5 class="pull-right"><a id="sample" href="#">sample</a></h5>
+          <textarea id="jade"></textarea>
+        </div>
+        <div class="span8">
+          <h4>Result HTML is</h4>
+          <pre class="prettyprint"><code id="markup"></code></pre>
+        </div>
+      </div>
+    </div>
+<pre id="sample-code">
+!!!
+html
+  head
+    meta(charset='utf-8')
+  body
+    h1#title Jade Preview
+    div.container
+      p This is a paragraph.
+</pre>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/socket.io.min.js"></script>
+    <script type="text/javascript" src="/js/prettify.js"></script>
+    <script type="text/javascript" src="/js/jquery.textarea.js"></script>
+    <script type="text/javascript" src="/js/client.js"></script>
+  </body>
+</html>
