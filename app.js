@@ -29,6 +29,13 @@ app.configure('development', function(){
 app.get('/', routes.index);
 
 server.listen(app.get('port'));
+console.log("Express server listening on port " + app.get('port'));
+
+// assuming io is the Socket.IO server object
+io.configure(function () {
+  io.set("transports",  ["xhr-polling"]);
+  io.set("polling duration",  10);
+});
 
 io.sockets.on('connection',  function (socket) {
   socket.on('changeHtml', function(jadeText) {
